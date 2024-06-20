@@ -1,2 +1,2 @@
-cd C:\Users\Yaroslav\Documents\Vencord
+cd C:\Users\UserName\Documents\Vencord
 pnpm build
