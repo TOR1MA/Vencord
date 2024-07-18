@@ -1,6 +1,6 @@
 @echo off
 
-set /p UserInput= "1. Install Vencord | 2. Update Vencord | 3. Install userplugins | 4. Update plugins | 5. Build: "
+set /p UserInput= "1. Install Vencord | 2. Update Vencord | 3. Install userplugins | 4. Update plugins | 5. Install themes | 6. Build: "
 	if /i "%UserInput%"=="1" (
 		cd %USERPROFILE%\Documents
 		git clone https://github.com/Vendicated/Vencord.git
@@ -9,7 +9,6 @@ set /p UserInput= "1. Install Vencord | 2. Update Vencord | 3. Install userplugi
 		pnpm i
 		pnpm build
 		pnpm inject
-	pause
 )
 	if /i "%UserInput%"=="2" (
 		cd %USERPROFILE%\Documents\Vencord
@@ -18,37 +17,52 @@ set /p UserInput= "1. Install Vencord | 2. Update Vencord | 3. Install userplugi
 )
 	if /i "%UserInput%"=="3" (
 		cd %USERPROFILE%\Documents\Vencord\src
-		git clone https://github.com/TOR1MA/userplugins
-		cd %USERPROFILE%\Documents\Vencord\src\userplugins
-		del readme.md
+		mkdir userplugins
+		cd userplugins
+		git clone https://github.com/TOR1MA/vc-move-everyone
 		git clone https://github.com/Syncxv/vc-message-logger-enhanced
 		git clone https://github.com/Syncxv/vc-gif-collections
 		git clone https://github.com/nyakowint/replaceActivityTypes
 		git clone https://github.com/D3SOX/vc-betterActivities
+		mkdir findReply
+		cd findReply
+		curl https://raw.githubusercontent.com/waresnew/Vencord/findreply/src/plugins/findReply/index.tsx -O
+		curl https://raw.githubusercontent.com/waresnew/Vencord/findreply/src/plugins/findReply/ReplyNavigator.tsx -O
+		curl https://raw.githubusercontent.com/waresnew/Vencord/findreply/src/plugins/findReply/styles.css -O
 		pnpm build
 	pause
 )
 	if /i "%UserInput%"=="4" (
-				echo vc-gif-collections
-				cd %USERPROFILE%\Documents\Vencord\src\userplugins\vc-gif-collections
-				git pull
-				echo vc-message-logger-enhanced
-				cd %USERPROFILE%\Documents\Vencord\src\userplugins\vc-message-logger-enhanced
-				git pull
-				echo replaceActivityTypes
-				cd %USERPROFILE%\Documents\Vencord\src\userplugins\replaceActivityTypes
-				git pull
-				echo vc-betterActivities
-				cd %USERPROFILE%\Documents\Vencord\src\userplugins\vc-betterActivities
-				git pull
-				echo MoveEveryone and findReply
-				cd %USERPROFILE%\Documents\Vencord\src\userplugins
-				git pull
-				pnpm build
+		echo vc-gif-collections
+		cd %USERPROFILE%\Documents\Vencord\src\userplugins\vc-gif-collections
+		git pull
+		echo vc-message-logger-enhanced
+		cd %USERPROFILE%\Documents\Vencord\src\userplugins\vc-message-logger-enhanced
+		git pull
+		echo replaceActivityTypes
+		cd %USERPROFILE%\Documents\Vencord\src\userplugins\replaceActivityTypes
+		git pull
+		echo vc-betterActivities
+		cd %USERPROFILE%\Documents\Vencord\src\userplugins\vc-betterActivities
+		git pull
+		echo vc-move-everyone
+		cd %USERPROFILE%\Documents\Vencord\src\userplugins\vc-move-everyone
+		git pull
+		cd %USERPROFILE%\Documents\Vencord\src\userplugins\findReply
+		curl https://raw.githubusercontent.com/waresnew/Vencord/findreply/src/plugins/findReply/index.tsx -O
+		curl https://raw.githubusercontent.com/waresnew/Vencord/findreply/src/plugins/findReply/ReplyNavigator.tsx -O
+		curl https://raw.githubusercontent.com/waresnew/Vencord/findreply/src/plugins/findReply/styles.css -O
+		pnpm build
 	pause
 )
 	if /i "%UserInput%"=="5" (
+		cd %USERPROFILE%\AppData\Roaming\Vencord\themes
+		curl https://raw.githubusercontent.com/TOR1MA/vc-themes/main/themes/Random.Things.css -O
+		curl https://raw.githubusercontent.com/TOR1MA/vc-themes/main/themes/Emoji.Replace.css -O
+		curl https://raw.githubusercontent.com/TOR1MA/vc-themes/main/themes/Modern.Theme.css -O
+	pause
+)
+	if /i "%UserInput%"=="6" (
 		cd %USERPROFILE%\Documents\Vencord
 		pnpm build
-	pause
 )
