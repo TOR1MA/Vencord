@@ -30,13 +30,6 @@ set /p UserInput= "1. Install Vencord | 2. Update Vencord | 3. Install plugins |
 		curl https://raw.githubusercontent.com/waresnew/Vencord/findreply/src/plugins/findReply/index.tsx -O
 		curl https://raw.githubusercontent.com/waresnew/Vencord/findreply/src/plugins/findReply/ReplyNavigator.tsx -O
 		curl https://raw.githubusercontent.com/waresnew/Vencord/findreply/src/plugins/findReply/styles.css -O
-		cd %USERPROFILE%\Documents\Vencord\src\plugins\userVoiceShow
-		curl https://raw.githubusercontent.com/vishnyanetchereshnya/Vencord/UserVoiceShow/src/plugins/userVoiceShow/index.tsx -O
-		cd %USERPROFILE%\Documents\Vencord\src\plugins\userVoiceShow\components
-		curl https://raw.githubusercontent.com/vishnyanetchereshnya/Vencord/UserVoiceShow/src/plugins/userVoiceShow/components/VoiceChannelSection.css -O
-		curl https://raw.githubusercontent.com/vishnyanetchereshnya/Vencord/UserVoiceShow/src/plugins/userVoiceShow/components/VoiceChannelSection.tsx -O
-		cd %USERPROFILE%\Documents\Vencord\src\plugins\permissionsViewer
-		curl https://raw.githubusercontent.com/PonyGirlDShadow/Vencord/main/src/plugins/permissionsViewer/index.tsx -O
 		pnpm build
 	pause
 )
@@ -60,6 +53,13 @@ set /p UserInput= "1. Install Vencord | 2. Update Vencord | 3. Install plugins |
 		curl https://raw.githubusercontent.com/waresnew/Vencord/findreply/src/plugins/findReply/index.tsx -O
 		curl https://raw.githubusercontent.com/waresnew/Vencord/findreply/src/plugins/findReply/ReplyNavigator.tsx -O
 		curl https://raw.githubusercontent.com/waresnew/Vencord/findreply/src/plugins/findReply/styles.css -O
+		cd %USERPROFILE%\Documents\Vencord\src\plugins\userVoiceShow
+		curl https://raw.githubusercontent.com/vishnyanetchereshnya/Vencord/UserVoiceShow/src/plugins/userVoiceShow/index.tsx -O
+		cd %USERPROFILE%\Documents\Vencord\src\plugins\userVoiceShow\components
+		curl https://raw.githubusercontent.com/vishnyanetchereshnya/Vencord/UserVoiceShow/src/plugins/userVoiceShow/components/VoiceChannelSection.css -O
+		curl https://raw.githubusercontent.com/vishnyanetchereshnya/Vencord/UserVoiceShow/src/plugins/userVoiceShow/components/VoiceChannelSection.tsx -O
+		cd %USERPROFILE%\Documents\Vencord\src\plugins\permissionsViewer
+		curl https://raw.githubusercontent.com/PonyGirlDShadow/Vencord/main/src/plugins/permissionsViewer/index.tsx -O
 		pnpm build
 	pause
 )
