@@ -49,15 +49,18 @@ set /p UserInput= "1. Install Vencord | 2. Update Vencord | 3. Install plugins |
 		echo vc-move-everyone
 		cd %USERPROFILE%\Documents\Vencord\src\userplugins\vc-move-everyone
 		git pull
+		echo findReply
 		cd %USERPROFILE%\Documents\Vencord\src\userplugins\findReply
 		curl https://raw.githubusercontent.com/waresnew/Vencord/findreply/src/plugins/findReply/index.tsx -O
 		curl https://raw.githubusercontent.com/waresnew/Vencord/findreply/src/plugins/findReply/ReplyNavigator.tsx -O
 		curl https://raw.githubusercontent.com/waresnew/Vencord/findreply/src/plugins/findReply/styles.css -O
+		echo userVoiceShow
 		cd %USERPROFILE%\Documents\Vencord\src\plugins\userVoiceShow
 		curl https://raw.githubusercontent.com/vishnyanetchereshnya/Vencord/UserVoiceShow/src/plugins/userVoiceShow/index.tsx -O
 		cd %USERPROFILE%\Documents\Vencord\src\plugins\userVoiceShow\components
 		curl https://raw.githubusercontent.com/vishnyanetchereshnya/Vencord/UserVoiceShow/src/plugins/userVoiceShow/components/VoiceChannelSection.css -O
 		curl https://raw.githubusercontent.com/vishnyanetchereshnya/Vencord/UserVoiceShow/src/plugins/userVoiceShow/components/VoiceChannelSection.tsx -O
+		echo permissionsViewer
 		cd %USERPROFILE%\Documents\Vencord\src\plugins\permissionsViewer
 		curl https://raw.githubusercontent.com/PonyGirlDShadow/Vencord/main/src/plugins/permissionsViewer/index.tsx -O
 		pnpm build
