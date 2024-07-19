@@ -1,6 +1,6 @@
 @echo off
 
-set /p UserInput= "1. Install Vencord | 2. Update Vencord | 3. Install userplugins | 4. Update plugins | 5. Install themes | 6. Build: "
+set /p UserInput= "1. Install Vencord | 2. Update Vencord | 3. Install plugins | 4. Update plugins | 5. Install themes | 6. Build: "
 	if /i "%UserInput%"=="1" (
 		cd %USERPROFILE%\Documents
 		git clone https://github.com/Vendicated/Vencord.git
@@ -30,6 +30,13 @@ set /p UserInput= "1. Install Vencord | 2. Update Vencord | 3. Install userplugi
 		curl https://raw.githubusercontent.com/waresnew/Vencord/findreply/src/plugins/findReply/index.tsx -O
 		curl https://raw.githubusercontent.com/waresnew/Vencord/findreply/src/plugins/findReply/ReplyNavigator.tsx -O
 		curl https://raw.githubusercontent.com/waresnew/Vencord/findreply/src/plugins/findReply/styles.css -O
+		cd %USERPROFILE%\Documents\Vencord\src\plugins\userVoiceShow
+		curl https://raw.githubusercontent.com/vishnyanetchereshnya/Vencord/UserVoiceShow/src/plugins/userVoiceShow/index.tsx -O
+		cd %USERPROFILE%\Documents\Vencord\src\plugins\userVoiceShow\components
+		curl https://raw.githubusercontent.com/vishnyanetchereshnya/Vencord/UserVoiceShow/src/plugins/userVoiceShow/components/VoiceChannelSection.css -O
+		curl https://raw.githubusercontent.com/vishnyanetchereshnya/Vencord/UserVoiceShow/src/plugins/userVoiceShow/components/VoiceChannelSection.tsx -O
+		cd %USERPROFILE%\Documents\Vencord\src\plugins\permissionsViewer
+		curl https://raw.githubusercontent.com/PonyGirlDShadow/Vencord/main/src/plugins/permissionsViewer/index.tsx -O
 		pnpm build
 	pause
 )
