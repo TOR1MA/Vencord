@@ -9,6 +9,7 @@ set /p UserInput= "1. Install Vencord | 2. Update Vencord | 3. Install userplugi
 		pnpm i
 		pnpm build
 		pnpm inject
+	pause
 )
 	if /i "%UserInput%"=="2" (
 		cd %USERPROFILE%\Documents\Vencord
